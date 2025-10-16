@@ -1,7 +1,11 @@
+// Query Selector
+
 const questionContainer = document.querySelector(".click-event");
 const btn1 = document.querySelector("#btn-1");
 const btn2 = document.getElementById("btn-2");
 const response = document.querySelector("p");
+
+// click event
 
 questionContainer.addEventListener("click", () => {
   questionContainer.classList.toggle("question-clicked");
@@ -18,6 +22,7 @@ btn2.addEventListener("click", () => {
 });
 
 //___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+// mouse event
 
 const mousemove = document.querySelector(".mousemove");
 
@@ -45,4 +50,22 @@ questionContainer.addEventListener("mouseout", () => {
 
 response.addEventListener("mouseover", () => {
   response.style.transform = "rotate(4deg)";
+});
+
+//___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+// keypress event
+
+const keypressContainer = document.querySelector(".keypress");
+const key = document.getElementById("key");
+
+document.addEventListener("keypress", (e) => {
+  key.textContent = e.key;
+
+  if (e.key === "j") {
+    keypressContainer.style.background = "pink";
+  } else if (e.key === "h") {
+    keypressContainer.style.background = "teal";
+  } else {
+    keypressContainer.style.background = "red";
+  }
 });
