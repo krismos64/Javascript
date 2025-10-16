@@ -5,7 +5,7 @@ const btn1 = document.querySelector("#btn-1");
 const btn2 = document.getElementById("btn-2");
 const response = document.querySelector("p");
 
-// click event
+// Click Event
 
 questionContainer.addEventListener("click", () => {
   questionContainer.classList.toggle("question-clicked");
@@ -22,7 +22,7 @@ btn2.addEventListener("click", () => {
 });
 
 //___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-// mouse event
+// Mouse Event
 
 const mousemove = document.querySelector(".mousemove");
 
@@ -53,10 +53,16 @@ response.addEventListener("mouseover", () => {
 });
 
 //___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-// keypress event
+// Keypress Event
 
 const keypressContainer = document.querySelector(".keypress");
 const key = document.getElementById("key");
+
+const ring = () => {
+  const audio = new Audio();
+  audio.src = "Enter.mp3";
+  audio.play();
+};
 
 document.addEventListener("keypress", (e) => {
   key.textContent = e.key;
@@ -67,5 +73,22 @@ document.addEventListener("keypress", (e) => {
     keypressContainer.style.background = "teal";
   } else {
     keypressContainer.style.background = "red";
+  }
+
+  ring();
+});
+
+//___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+// Scroll Event
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+
+  if (window.scrollY > 120) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
   }
 });
